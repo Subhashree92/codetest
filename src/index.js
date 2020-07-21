@@ -19,7 +19,8 @@ const App = () => (
           { mq: '700px', columns: 3, imageWidth: 200, gutter: 10 },
           { mq: '1000px', columns: 3, imageWidth: 220, gutter: 10 },
         ]}
-        gifPerPage={20}
+        
+        
       />
     </div>
     <footer>
