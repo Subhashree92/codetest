@@ -1,26 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+import { render } from 'react-dom'
+import ReactGiphySearchbox from 'react-giphy-searchbox'
+var YOUR_API_KEY= "api.giphy.com/v1/gifs/search"
+const App = () => (
+  <ReactGiphySearchbox
+    apiKey="YOUR_API_KEY"
+    onSelect={item => console.log(item)}
+    masonryConfig={[
+      { columns: 2, imageWidth: 110, gutter: 5 },
+      { mq: '700px', columns: 3, imageWidth: 110, gutter: 5 },
+    ]}
+  />
+)
+render(<App />, document.getElementById("root"))
 export default App;
